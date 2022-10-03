@@ -29,5 +29,7 @@ p3 <-plotAnnoBar(peakAnnoList)
 ggsave("plotAnnoBar.png", plot = p3)
 
 genes= lapply(peakAnnoList, function(i) as.data.frame(i)$geneId)
-p4 <- vennplot(genes)
-ggsave("vennplot.png", plot = p4)
+png("vennplot.png")
+vennplot(genes)
+dev.off()
+
